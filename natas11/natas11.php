@@ -1,16 +1,22 @@
 <?php
 
-function xor_encrypt($in) {
-    $key = '<censored>';
-    $text = $in;
-    $outText = '';
+$defaultData = array('showpassword' => 'no', 'bgcolor' => '#ffffff');
+$defaultCookie = 'MGw7JCQ5OC04PT8jOSpqdmkgJ25nbCorKCEkIzlscm5oKC4qLSgubjY%3D';
 
-    // Iterate through each character
-    for($i=0;$i<strlen($text);$i++) {
-    $outText .= $text[$i] ^ $key[$i % strlen($key)];
+function xor_encrypt($data, $key) {
+    $result = '';
+    $tempData = $data;
+    $tempKey = $key;
+
+    for ($i = 0; $i < strlen($data) ; $i++) {
+        $result .= $data[$i] ^ $key[$i % strlen($key)];
     }
-
-    return $outText;
+    return $result;
 }
 
-$defaultdata = array( "showpassword"=>"no", "bgcolor"=>"#ffffff");
+$decodedKey = xor_encrypt(base64_decode($defaultCookie), json_encode($defaultData));
+
+$plaintext = array('showpassword' => 'yes', 'bgcolor' => '#ffffff');
+
+echo base64_encode(xor_encrypt(json_encode($plaintext), $decodedKey)); // cookie is MGw7JCQ5OC04PT8jOSpqdmk3LT9pYmouLC0nICQ8anZpbS4qLSguKmkx
+echo "\n";

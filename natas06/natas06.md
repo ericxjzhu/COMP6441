@@ -1,5 +1,7 @@
 # Natas 6
 
+Link: http://natas6.natas.labs.overthewire.org/
+
 ![Default web page appearance.](../images/natas6/defaultPage.png)
 
 Opening the page we see that we have a secret that we need to input as well as a link to view the source code.

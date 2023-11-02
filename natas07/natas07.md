@@ -1,5 +1,7 @@
 # Natas 7
 
+Link: http://natas7.natas.labs.overthewire.org/
+
 ![Default web page appearance.](../images/natas7/defaultPage.png)
 
 Viewing the page, we see that it contains links to a Home page and an About page. Clicking on either links takes us to their respective pages. We notice that the url loads using the page parameter in the url.

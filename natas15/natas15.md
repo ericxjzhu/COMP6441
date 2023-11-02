@@ -1,5 +1,7 @@
 # Natas 15
 
+Link: http://natas15.natas.labs.overthewire.org/
+
 ![Alt text](../images/natas15/defaultPage.png)
 
 Viewing the page we see that this time there is only a username this time. Playing around with it we determine that natas16 is a valid username.
@@ -12,7 +14,7 @@ However the same vulnerabilities as natas14 exists, a SQL injection is possible.
 
 Referencing [this](https://www.exploit-db.com/docs/english/17397-blind-sql-injection-with-regular-expressions-attack.pdf) article's section on Exporting a value with Regexp attack (MSSQL) on page 7, we can construct a query that will perform something similar.
 
-The username that we add is `natas16" AND password LIKE "a%"#` where a is the character that we want to search for in the password. The `LIKE` operator is used in a `WHERE` clause to search for a pattern in a column. The wildcard `%` is used to represent zero, one or multiple characters. Thus the query being run will tell use whether or not a natas16 is a username `AND` if there is a password that starts with the letter a. Intercepting the request we see the following query being exectued.
+The username that we add is `natas16" AND password LIKE BINARY "a%"#` where a is the character that we want to search for in the password. The `LIKE` operator is used in a `WHERE` clause to search for a pattern in a column. The wildcard `%` is used to represent zero, one or multiple characters. The `BINARY` function is necessary to ensure case-sensitive comparison. MySQL performs case-insensitive comparisons on its values by default. Thus the query being run will tell use whether or not a natas16 is a username `AND` if there is a password that starts with the letter a. Intercepting the request we see the following query being exectued.
 
 ![Alt text](../images/natas15/debug.png)
 

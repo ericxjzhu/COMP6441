@@ -1,5 +1,7 @@
 # Natas 10
 
+Link: http://natas10.natas.labs.overthewire.org/
+
 ![Default web page appearance.](../images/natas10/defaultPage.png)
 
 Viewing the page, we see that it is similar to the previous exercise, however this time it states that it is "filtering on certain characters".

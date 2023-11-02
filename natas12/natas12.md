@@ -1,4 +1,7 @@
 # Natas 12
+
+Link: http://natas12.natas.labs.overthewire.org/
+
 ![Alt text](../images/natas12/defaultPage.png)
 
 We see a form where we can submit a jpg file of up to 1KB.

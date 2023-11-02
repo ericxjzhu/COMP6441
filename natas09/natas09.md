@@ -1,5 +1,7 @@
 # Natas 9
 
+Link: http://natas9.natas.labs.overthewire.org/
+
 ![Default web page appearance.](../images/natas9/defaultPage.png)
 
 Viewing the page, we see that it is acting like a dictionary where we enter characters and the page will return words that contain those characters.

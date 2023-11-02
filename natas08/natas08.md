@@ -1,5 +1,7 @@
 # Natas 8
 
+Link: http://natas8.natas.labs.overthewire.org/
+
 ![Default web page appearance.](../images/natas8/defaultPage.png)
 
 Viewing the page, we see once again that it is asking for a secret and a link to view the source code.
